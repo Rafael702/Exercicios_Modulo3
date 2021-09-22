@@ -5,10 +5,12 @@ import java.util.Date;
 
 public class Pessoa {
     // Atributos
+    Calendar calendar = Calendar.getInstance();
     private String nome;
     private Data dataDeNascimento;
     private double altura;
     private int idade;
+    private int ano = calendar.get(Calendar.YEAR);
 
     // Métodos Construtores
     public Pessoa() {
@@ -51,10 +53,9 @@ public class Pessoa {
     }
 
     // Criando método para calcular idade da pessoa
-    public void calcularIdade(int anoAtual) {
-        int idade = anoAtual - dataDeNascimento.getAno();
+    public void calcularIdade() {
+        int idade = ano - dataDeNascimento.getAno();
         this.idade = idade;
-        // return idade;
     }
 
     // Classe responsável por imprimir os dados
@@ -62,8 +63,6 @@ public class Pessoa {
         System.out.println("Nome da pessoa: " + nome);
         System.out.println("Data de nascimento da pessoa: " + dataDeNascimento.getDia() + "/" + dataDeNascimento.getMes() + "/" + dataDeNascimento.getAno());
         System.out.println("Altura da pessoa: " + altura);
-        System.out.println("Idade " + nome + " é: " + idade);
+        System.out.println("Idade do " + nome + " é: " + idade);
     }
-
-
 }
