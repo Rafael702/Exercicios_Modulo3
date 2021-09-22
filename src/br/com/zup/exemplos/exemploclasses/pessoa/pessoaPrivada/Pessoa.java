@@ -1,16 +1,18 @@
 package br.com.zup.exemplos.exemploclasses.pessoa.pessoaPrivada;
 
+import java.time.Year;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Pessoa {
     // Atributos
-    Calendar calendar = Calendar.getInstance();
+//    Calendar calendar = Calendar.getInstance();
     private String nome;
     private Data dataDeNascimento;
     private double altura;
     private int idade;
-    private int ano = calendar.get(Calendar.YEAR);
+//    private int ano = calendar.get(Calendar.YEAR);
+    int ano = Year.now().getValue();
 
     // Métodos Construtores
     public Pessoa() {
