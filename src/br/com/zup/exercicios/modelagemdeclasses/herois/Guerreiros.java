@@ -13,7 +13,7 @@ public class Guerreiros extends Heroi{
         this.poderAtaque = poderAtaque;
     }
 
-    public double aplicarDano(){
+    private double aplicarDano(){
         return poderAtaque;
     }
 }
