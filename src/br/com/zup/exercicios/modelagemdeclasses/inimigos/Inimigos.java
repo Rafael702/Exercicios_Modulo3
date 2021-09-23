@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.modelagemdeclasses;
+package br.com.zup.exercicios.modelagemdeclasses.inimigos;
 
 public class Inimigos {
     String nome;

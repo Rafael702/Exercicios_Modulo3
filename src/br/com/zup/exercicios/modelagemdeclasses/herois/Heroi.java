@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.modelagemdeclasses;
+package br.com.zup.exercicios.modelagemdeclasses.herois;
 
 public class Heroi {
     private String nome;
