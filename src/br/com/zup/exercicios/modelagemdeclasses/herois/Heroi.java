@@ -34,7 +34,8 @@ public class Heroi {
     }
 
     public double receberDano(double dano) {
-        return dano;
+        double perdaDeVida = vida - dano;
+        return this.vida = perdaDeVida;
     }
 
     public double exibirVida() {

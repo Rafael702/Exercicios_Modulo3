@@ -33,8 +33,9 @@ public class Inimigos {
         return this.nome = nome;
     }
 
-    public double receberDano(double dano){
-        return dano;
+    public double receberDano(double dano) {
+        double perdaDeVida = vida - dano;
+        return this.vida = perdaDeVida;
     }
 
     public double exibirVida(){
