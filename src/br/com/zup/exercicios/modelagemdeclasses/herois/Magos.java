@@ -3,8 +3,8 @@ package br.com.zup.exercicios.modelagemdeclasses.herois;
 public class Magos extends Heroi{
     private double poderMagico;
 
-    public Magos(double poderMagico) {
-        this.poderMagico = poderMagico;
+    public Magos() {
+
     }
 
     public Magos(String nome, double vida, double poderMagico) {
@@ -20,7 +20,8 @@ public class Magos extends Heroi{
         this.poderMagico = poderMagico;
     }
 
-    private double aplicarMagia(){
+    public double aplicarMagia(){
         return poderMagico;
     }
+
 }

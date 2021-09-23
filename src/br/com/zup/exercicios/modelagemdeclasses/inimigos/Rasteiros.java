@@ -3,8 +3,8 @@ package br.com.zup.exercicios.modelagemdeclasses.inimigos;
 public class Rasteiros extends Inimigos{
     private double danoEspinhos;
 
-    public Rasteiros(double danoEspinhos) {
-        this.danoEspinhos = danoEspinhos;
+    public Rasteiros() {
+
     }
 
     public Rasteiros(String nome, double vida, double danoEspinhos) {
@@ -20,7 +20,7 @@ public class Rasteiros extends Inimigos{
         this.danoEspinhos = danoEspinhos;
     }
 
-    private double aplicarDanos(){
+    public double aplicarDanos(){
         return danoEspinhos;
     }
 }

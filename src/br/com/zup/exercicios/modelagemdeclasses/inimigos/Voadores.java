@@ -3,8 +3,8 @@ package br.com.zup.exercicios.modelagemdeclasses.inimigos;
 public class Voadores extends Inimigos{
     private double danoTiro;
 
-    public Voadores(double danoTiro) {
-        this.danoTiro = danoTiro;
+    public Voadores() {
+
     }
 
     public Voadores(String nome, double vida, double danoTiro) {
@@ -20,7 +20,7 @@ public class Voadores extends Inimigos{
         this.danoTiro = danoTiro;
     }
 
-    private double aplicarDano(){
+    public double aplicarDano(){
         return danoTiro;
     }
 }

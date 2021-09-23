@@ -4,8 +4,7 @@ public class Guerreiros extends Heroi{
 
     private double poderAtaque;
 
-    public Guerreiros(double poderAtaque) {
-        this.poderAtaque = poderAtaque;
+    public Guerreiros() {
     }
 
     public Guerreiros(String nome, double vida, double poderAtaque) {
@@ -13,7 +12,7 @@ public class Guerreiros extends Heroi{
         this.poderAtaque = poderAtaque;
     }
 
-    private double aplicarDano(){
+    public double aplicarDano(){
         return poderAtaque;
     }
 }
