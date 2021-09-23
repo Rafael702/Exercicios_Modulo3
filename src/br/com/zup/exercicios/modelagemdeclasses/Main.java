@@ -14,14 +14,12 @@ public class Main {
         guerreiro.trocarNome("John");
         espinhoso.trocarNome("Venom");
 
-        System.out.println("Danos recebidos " + espinhoso.getNome() + " " + espinhoso.receberDano(maguinho.aplicarMagia()));
-        System.out.println("Vida: " + espinhoso.exibirVida());
-        System.out.println("Danos recebidos " + espinhoso.getNome() + " " + espinhoso.receberDano(maguinho.aplicarMagia()));
-        System.out.println("Vida: " + espinhoso.exibirVida());
-        System.out.println("Danos recebidos " + maguinho.getNome() + " " + maguinho.receberDano(espinhoso.aplicarDanos()));
-        System.out.println("Vida: " + maguinho.exibirVida());
-        System.out.println("Danos recebidos " + maguinho.getNome() + " " + maguinho.receberDano(espinhoso.aplicarDanos()));
-        System.out.println("Vida: " + maguinho.exibirVida());
+        System.out.println(espinhoso.getNome() + " recebeu danos de " + maguinho.getNome() + ": -❤" + espinhoso.receberDano(maguinho.aplicarMagia()));
+        System.out.println("Vida: ❤" + espinhoso.exibirVida());
+        System.out.println(espinhoso.getNome() + " recebeu danos de " + maguinho.getNome() + ": -❤" + espinhoso.receberDano(maguinho.aplicarMagia()));
+        System.out.println("Vida: ❤" + espinhoso.exibirVida());
+        System.out.println(espinhoso.getNome() + " recebeu danos de " + maguinho.getNome() + ": -❤" + espinhoso.receberDano(maguinho.aplicarMagia()));
+        System.out.println("Vida: ❤" + espinhoso.exibirVida());
 
 
     }

@@ -34,11 +34,15 @@ public class Inimigos {
     }
 
     public double receberDano(double dano) {
-        double perdaDeVida = vida - dano;
-        return vida = perdaDeVida;
+        vida = vida - dano;
+        return dano;
     }
 
     public double exibirVida(){
-        return vida;
+        if(vida >= 0) {
+            return vida;
+        }else{
+            return 0;
+        }
     }
 }

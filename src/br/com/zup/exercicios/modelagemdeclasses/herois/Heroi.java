@@ -34,8 +34,12 @@ public class Heroi {
     }
 
     public double receberDano(double dano) {
-        double perdaDeVida = vida - dano;
-        return vida = perdaDeVida;
+        if(dano < vida){
+            return dano;
+        }else{
+         return vida = 0;
+        }
+
     }
 
     public double exibirVida() {
