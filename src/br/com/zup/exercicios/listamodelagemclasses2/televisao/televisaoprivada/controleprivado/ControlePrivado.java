@@ -23,26 +23,25 @@ public class ControlePrivado {
     }
 
     public void aumentarVolume(int nivelVolume) throws Exception {
-            System.out.print("🔈");
-            while (tv.getVolume() < nivelVolume) {
-                System.out.print(volume);
-                tv.setVolume(tv.getVolume() + 1);
-                Thread.sleep(1_000);
-            }
-            volume = volume;
-            System.out.println(tv.getVolume());
+        System.out.print("🔈");
+        while (tv.getVolume() < nivelVolume) {
+            System.out.print(volume);
+            tv.setVolume(tv.getVolume() + 1);
+            Thread.sleep(500);
         }
+        System.out.println(tv.getVolume());
+    }
 
 
     public void diminuirVolume(int nivelVolume) throws Exception {
-            System.out.print("🔈");
-            while (tv.getVolume() > nivelVolume) {
-                System.out.print(volume.replace(")", "-"));
-                tv.setVolume(tv.getVolume() - 1);
-                Thread.sleep(1_000);
-            }
-            System.out.println(tv.getVolume());
+        System.out.print("🔈");
+        while (tv.getVolume() > nivelVolume) {
+            System.out.print(volume.replace(")", "-"));
+            tv.setVolume(tv.getVolume() - 1);
+            Thread.sleep(700);
         }
+        System.out.println(tv.getVolume());
+    }
 
 
     public void aumentarCanal(int canalEscolhido) throws Exception {

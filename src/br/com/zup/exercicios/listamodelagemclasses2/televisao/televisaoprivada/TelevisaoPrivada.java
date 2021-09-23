@@ -1,8 +1,8 @@
 package br.com.zup.exercicios.listamodelagemclasses2.televisao.televisaoprivada;
 
 public class TelevisaoPrivada {
-    private int volume = 0;
-    private int canal = 0;
+    private int volume;
+    private int canal;
 
     public TelevisaoPrivada(){
 
