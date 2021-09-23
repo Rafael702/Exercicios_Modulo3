@@ -18,6 +18,8 @@ public class Main {
         System.out.println("Vida: ❤" + espinhoso.exibirVida());
         System.out.println(espinhoso.getNome() + " recebeu danos de " + maguinho.getNome() + ": -❤" + espinhoso.receberDano(maguinho.aplicarMagia()));
         System.out.println("Vida: ❤" + espinhoso.exibirVida());
+        System.out.println(maguinho.getNome() + " recebeu danos de " + espinhoso.getNome() + ": -❤" + maguinho.receberDano(espinhoso.aplicarDanos()));
+        System.out.println("Vida: ❤" + maguinho.exibirVida());
         System.out.println(espinhoso.getNome() + " recebeu danos de " + maguinho.getNome() + ": -❤" + espinhoso.receberDano(maguinho.aplicarMagia()));
         System.out.println("Vida: ❤" + espinhoso.exibirVida());
 

@@ -39,7 +39,7 @@ public class Heroi {
     }
 
     public double exibirVida(){
-        if(vida >= 0) {
+        if(vida > 0) {
             return vida;
         }else{
             return 0;
