@@ -24,6 +24,9 @@ public class Retangulo {
         this.altura = altura;
     }
 
+    private static final int OPCAO_UM = 1;
+    private static final int OPCAO_DOIS = 2;
+
     public void mudarValorDosLados(double valorLado, int baseOuAltura) {
         if (baseOuAltura == 1) {
             base = valorLado;
@@ -35,8 +38,8 @@ public class Retangulo {
         }
     }
 
-    public String valorDosLados() {
-        return "Base: " + base + "\nAltura:" + altura;
+    public void valorDosLados() {
+        System.out.println("Base: " + base + "\nAltura: " + altura);
     }
 
     public void calculoAreaEPerimetro() {
