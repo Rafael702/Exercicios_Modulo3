@@ -62,5 +62,7 @@ public class Funcionarios {
         this.salario = salario;
     }
 
-
+    public double aumentaSalario(){
+        return salario * 0.10;
+    }
 }
