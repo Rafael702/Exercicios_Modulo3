@@ -1,9 +1,9 @@
 package br.com.zup.exercicios.listacomplementar.bola;
 
-public class Jabulane extends Bola{
+public class Jabulani extends Bola{
     String nome;
 
-    public Jabulane(String cor, double circunferencia, String material, String nome) {
+    public Jabulani(String cor, double circunferencia, String material, String nome) {
         super(cor, circunferencia, material);
         this.nome = nome;
     }
