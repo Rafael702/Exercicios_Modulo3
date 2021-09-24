@@ -1,4 +1,4 @@
 package br.com.zup.exemplos.polimorfismo.exemplo1;
 
-public class Protagonistas {
+public class Protagonista {
 }
