@@ -1,11 +1,11 @@
 package br.com.zup.exemplos.encapsulamento.exemplo2;
 
-public class Heroi {
+public class Herois {
     private String nome;
     private String protecao;
-    private String vida;
+    private int vida;
 
-    public Heroi(String nome, String protecao, String vida) {
+    public Herois(String nome, String protecao, int vida) {
         this.nome = nome;
         this.protecao = protecao;
         this.vida = vida;
@@ -27,11 +27,11 @@ public class Heroi {
         this.protecao = protecao;
     }
 
-    public String getVida() {
+    public int getVida() {
         return vida;
     }
 
-    public void setVida(String vida) {
+    public void setVida(int vida) {
         this.vida = vida;
     }
 }
