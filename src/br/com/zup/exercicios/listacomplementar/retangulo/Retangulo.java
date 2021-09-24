@@ -1,4 +1,4 @@
-package br.com.zup.exercicios.listacomplementar;
+package br.com.zup.exercicios.listacomplementar.retangulo;
 
 public class Retangulo {
     private double base, altura;
