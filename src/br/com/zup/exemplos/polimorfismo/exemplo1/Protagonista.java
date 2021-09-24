@@ -16,6 +16,10 @@ public class Protagonista extends Ator{
         this.plr = plr;
     }
 
-
+    @Override
+    public double calcularSalario(){
+        double salarioLiquido = ((this.getSalario() + this.plr) - this.getImposto());
+        return salarioLiquido;
+    }
 
 }
