@@ -13,6 +13,10 @@ public class Atores {
         this.salario = salario;
     }
 
+    public Atores(String nome, double salario){
+
+    }
+
     public Atores(String nome, String papel, double salario) {
         this.nome = nome;
         this.papel = papel;
