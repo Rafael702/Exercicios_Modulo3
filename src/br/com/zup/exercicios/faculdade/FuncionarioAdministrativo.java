@@ -1,6 +1,6 @@
 package br.com.zup.exercicios.faculdade;
 
-public class FuncionarioAdministrativo extends Funcionarios{
+public class FuncionarioAdministrativo extends Funcionarios {
     private String funcaoAdministrativa;
     private String senioridade;
 

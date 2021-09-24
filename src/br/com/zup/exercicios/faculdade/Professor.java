@@ -1,13 +1,29 @@
 package br.com.zup.exercicios.faculdade;
 
 
-public class Professor extends Funcionarios{
-    private int nivelDeGraduacao;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Professor extends Funcionarios {
+    List<Turma> listaDeTurmas = new ArrayList<>();
+    private String nivelDeGraduacao;
     private String disciplinaMinistrada;
     private int qtdDeAlunos;
     private int qtdDeTurmas;
 
-    public Professor(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, int nivelDeGraduacao, String disciplinaMinistrada, int qtdDeAlunos, int qtdDeTurmas) {
+    public Professor(String nome) {
+        super(nome);
+    }
+
+    public Professor(String nome, String nivelDeGraduacao, String disciplinaMinistrada, int qtdDeAlunos, int qtdDeTurmas) {
+        super(nome);
+        this.nivelDeGraduacao = nivelDeGraduacao;
+        this.disciplinaMinistrada = disciplinaMinistrada;
+        this.qtdDeAlunos = qtdDeAlunos;
+        this.qtdDeTurmas = qtdDeTurmas;
+    }
+
+    public Professor(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String disciplinaMinistrada, int qtdDeAlunos, int qtdDeTurmas) {
         super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario);
         this.nivelDeGraduacao = nivelDeGraduacao;
         this.disciplinaMinistrada = disciplinaMinistrada;
@@ -15,19 +31,11 @@ public class Professor extends Funcionarios{
         this.qtdDeTurmas = qtdDeTurmas;
     }
 
-    public Professor(String nome, String cpf, String numeroDeRegistro, double salario, int nivelDeGraduacao, String disciplinaMinistrada, int qtdDeAlunos, int qtdDeTurmas) {
-        super(nome, cpf, numeroDeRegistro, salario);
-        this.nivelDeGraduacao = nivelDeGraduacao;
-        this.disciplinaMinistrada = disciplinaMinistrada;
-        this.qtdDeAlunos = qtdDeAlunos;
-        this.qtdDeTurmas = qtdDeTurmas;
-    }
-
-    public int getNivelDeGraduacao() {
+    public String getNivelDeGraduacao() {
         return nivelDeGraduacao;
     }
 
-    public void setNivelDeGraduacao(int nivelDeGraduacao) {
+    public void setNivelDeGraduacao(String nivelDeGraduacao) {
         this.nivelDeGraduacao = nivelDeGraduacao;
     }
 
@@ -55,5 +63,14 @@ public class Professor extends Funcionarios{
         this.qtdDeTurmas = qtdDeTurmas;
     }
 
+    public void adicionarTurma(Turma lista) {
+        listaDeTurmas.add(lista);
+        System.out.println("-------------Lista de Turmas-----------");
+        for (Turma alunos : listaDeTurmas) {
+            System.out.println("----------------------------------");
+            System.out.println("Série: " + alunos.getSerie());
+            System.out.println("O período de aulas para esta turma é: " + alunos.getPeriodo());
+        }
+    }
 
 }

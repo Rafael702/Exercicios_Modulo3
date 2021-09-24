@@ -7,6 +7,10 @@ public class Funcionarios {
     private String orgaoDeLotacao;
     private double salario;
 
+    public Funcionarios(String nome) {
+        this.nome = nome;
+    }
+
     public Funcionarios(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario) {
         this.nome = nome;
         this.cpf = cpf;
@@ -62,7 +66,7 @@ public class Funcionarios {
         this.salario = salario;
     }
 
-    public double aumentaSalario(){
+    public double aumentaSalario() {
         return salario * 0.10;
     }
 }
