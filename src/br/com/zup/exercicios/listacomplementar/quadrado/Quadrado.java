@@ -8,7 +8,7 @@ public class Quadrado {
     }
 
     public void mudaValorLado(double lado) {
-        this.tamanhoLado = lado;
+        tamanhoLado = lado;
     }
 
     public double valorLado() {
