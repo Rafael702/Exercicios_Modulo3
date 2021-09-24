@@ -58,7 +58,8 @@ public class Ator {
     }
 
     public double calcularSalario(){
-
+        double salarioLiquido = salario - imposto;
+        return salarioLiquido;
     }
 
 }
