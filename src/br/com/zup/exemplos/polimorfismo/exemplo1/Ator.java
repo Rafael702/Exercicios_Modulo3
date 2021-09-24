@@ -57,7 +57,7 @@ public class Ator {
         this.imposto = imposto;
     }
 
-    public double salario(){
+    public double calcularSalario(){
 
     }
 
