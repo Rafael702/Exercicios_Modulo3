@@ -1,6 +1,6 @@
 package br.com.zup.exemplos.faculdaderesolucao;
 
-public class Professor extends Funcionario
+public class Professor extends Funcionario{
     private String nivelDeGraduacao;
     private String disciplinaMinistrada;
     private int qtd_alunos;
