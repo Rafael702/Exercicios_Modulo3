@@ -29,7 +29,3 @@ public class Imovel {
         this.valorAluguel = valorAluguel;
     }
 }
-
-
-
-}
