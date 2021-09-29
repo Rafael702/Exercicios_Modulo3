@@ -8,11 +8,14 @@ public class Cardapio {
 
     List<Prato> listaDePratos = new ArrayList<>();
 
+    public Cardapio() {
+    }
+
     public Cardapio(Prato prato) {
         this.prato = prato;
     }
 
-    public void adicionarPrato(){
+    public void adicionarPrato(Prato prato){
         listaDePratos.add(prato);
     }
 
