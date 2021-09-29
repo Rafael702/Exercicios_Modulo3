@@ -37,10 +37,6 @@ public class Prato {
         this.valorDoPrato = valorDoPrato;
     }
 
-    public void adicionarIngredientes(){
-       listaDeIngredientes.add(ingrediente);
-    }
-
     public Ingredientes getIngrediente() {
         return ingrediente;
     }
@@ -51,6 +47,10 @@ public class Prato {
 
     public List<Ingredientes> getListaDeIngredientes() {
         return listaDeIngredientes;
+    }
+
+    public void adicionarIngredientes(Ingredientes ingredientes){
+        listaDeIngredientes.add(ingredientes);
     }
 
     @Override
