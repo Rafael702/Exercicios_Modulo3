@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Sistema {
 
-    private static Scanner capturarDados(String mensagem) {
+    public static Scanner capturarDados(String mensagem) {
         Scanner sc = new Scanner(System.in);
         System.out.println(mensagem);
         return sc;
     }
 
 
-    private static Morador criarMorador() {
+    public static Morador criarMorador() {
         String nome = capturarDados("Informe o nome do Morador: ").nextLine();
         String cpf = capturarDados("Informe o CPF do " + nome + ":").nextLine();
 
@@ -19,7 +19,7 @@ public class Sistema {
         return morador;
     }
 
-    private static Imovel criarImovel() {
+    public static Imovel criarImovel() {
         String rua = capturarDados("Informe o nome da Rua em que está localizado o imóvel:").nextLine();
         String funcionario = capturarDados("Informe o nome do Funcionário:").nextLine();
         double valorAluguel = capturarDados("Informe o valor do Aluguel").nextDouble();
@@ -27,6 +27,14 @@ public class Sistema {
         Imovel imovel = new Imovel(rua, funcionario, valorAluguel,criarMorador());
 
         return imovel;
+    }
+
+    public static CatalogoImobiliaria criarCatalogo(){
+        CatalogoImobiliaria catalogo = new CatalogoImobiliaria();
+
+        catalogo.cadastrarImovel(criarImovel());
+
+        return catalogo;
     }
 
 
