@@ -10,4 +10,11 @@ public class CatalogoImobiliaria implements ModeloCatalogo {
     public void cadastrarImovel(Imovel novoImovel) {
         imovels.add(novoImovel);
     }
+
+    @Override
+    public String toString() {
+        return "CatalogoImobiliaria{" +
+                "imovels=" + imovels +
+                '}';
+    }
 }
