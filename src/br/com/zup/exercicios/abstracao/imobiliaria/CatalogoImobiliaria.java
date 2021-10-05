@@ -11,6 +11,12 @@ public class CatalogoImobiliaria implements ModeloCatalogo {
         imovels.add(novoImovel);
     }
 
+    public void exibirLista(){
+        for(Imovel referencia : imovels){
+                System.out.println(referencia);
+        }
+    }
+
     @Override
     public String toString() {
         return "CatalogoImobiliaria{" +

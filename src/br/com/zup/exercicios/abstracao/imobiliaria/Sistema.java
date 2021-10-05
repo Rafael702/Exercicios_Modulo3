@@ -6,10 +6,21 @@ import java.util.Scanner;
 
 public class Sistema {
 
+    private final static int OPCAO_UM = 1;
+    private final static int OPCAO_DOIS = 2;
+    private final static int OPCAO_TRES = 3;
+
     private static Scanner capturarDados(String mensagem) {
         Scanner sc = new Scanner(System.in);
         System.out.println(mensagem);
         return sc;
+    }
+
+    public static void menuPrincipal(){
+        System.out.println("Digite 1: Para Adicionar um imóvel a lista.");
+        System.out.println("Digite 2: Para Exibir a lista.");
+        System.out.println("Digite 3: Para Sair do Programa.");
+
     }
 
 
@@ -21,7 +32,7 @@ public class Sistema {
         return morador;
     }
 
-    private static Imovel criarImovel() {
+    public static Imovel criarImovel() {
         String rua = capturarDados("Informe o nome da Rua em que está localizado o imóvel:").nextLine();
         String funcionario = capturarDados("Informe o nome do Funcionário:").nextLine();
         double valorAluguel = capturarDados("Informe o valor do Aluguel").nextDouble();
@@ -31,27 +42,30 @@ public class Sistema {
         return imovel;
     }
 
-    private static CatalogoImobiliaria criarCatalogo() {
-        CatalogoImobiliaria catalogo = new CatalogoImobiliaria();
 
-        catalogo.cadastrarImovel(criarImovel());
 
-        return catalogo;
-    }
-
-    private static void exibirLista(CatalogoImobiliaria catalogoImobiliaria) {
-        List<CatalogoImobiliaria> catalogo = new ArrayList<>();
-
-        catalogo.add(catalogoImobiliaria);
-        for (CatalogoImobiliaria referencia : catalogo) {
-            System.out.println(referencia);
-        }
-    }
 
     public static void run(){
-        CatalogoImobiliaria catalogoImobiliaria = new CatalogoImobiliaria();
+        CatalogoImobiliaria catalogo = new CatalogoImobiliaria();
+        boolean chave = true;
 
-        exibirLista(criarCatalogo());
+        while(chave) {
+
+            menuPrincipal();
+            int opcao = capturarDados("Digite a sua opção:").nextInt();
+
+            if(opcao == OPCAO_UM){
+                Imovel imovel = criarImovel();
+                catalogo.cadastrarImovel(imovel);
+
+                System.out.println("Cadastrado com sucesso!!!");
+            }else if(opcao == OPCAO_DOIS){
+                catalogo.exibirLista();
+            }else if(opcao == OPCAO_TRES){
+                chave = false;
+                System.out.println("Saindo do menu.");
+            }
+        }
     }
 
 }
