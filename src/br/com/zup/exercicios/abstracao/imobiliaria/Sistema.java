@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Sistema {
 
-    public static Scanner capturarDados(String mensagem) {
+    private static Scanner capturarDados(String mensagem) {
         Scanner sc = new Scanner(System.in);
         System.out.println(mensagem);
         return sc;
     }
 
 
-    public static Morador criarMorador() {
+    private static Morador criarMorador() {
         String nome = capturarDados("Informe o nome do Morador: ").nextLine();
         String cpf = capturarDados("Informe o CPF do " + nome + ":").nextLine();
 
@@ -19,7 +19,7 @@ public class Sistema {
         return morador;
     }
 
-    public static Imovel criarImovel() {
+    private static Imovel criarImovel() {
         String rua = capturarDados("Informe o nome da Rua em que está localizado o imóvel:").nextLine();
         String funcionario = capturarDados("Informe o nome do Funcionário:").nextLine();
         double valorAluguel = capturarDados("Informe o valor do Aluguel").nextDouble();
