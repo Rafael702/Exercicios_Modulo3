@@ -7,12 +7,18 @@ public class Imovel {
     private String endereco;
     private double valorDoAluguel;
     private String funcionarioResponsavel;
+    private Morador morador;
     private List<Morador> moradores = new ArrayList<>();
 
-    public Imovel(String endereco, String funcionarioResponsavel, double valorDoAluguel) {
+    public Imovel() {
+
+    }
+
+    public Imovel(String endereco, String funcionarioResponsavel, double valorDoAluguel, Morador morador) {
         this.endereco = endereco;
         this.funcionarioResponsavel = funcionarioResponsavel;
         this.valorDoAluguel = valorDoAluguel;
+        this.morador = morador;
     }
 
     public String getEndereco() {
@@ -39,6 +45,18 @@ public class Imovel {
         this.funcionarioResponsavel = funcionarioResponsavel;
     }
 
+    public Morador getMorador() {
+        return morador;
+    }
+
+    public void setMorador(Morador morador) {
+        this.morador = morador;
+    }
+
+    public void setMoradores(List<Morador> moradores) {
+        this.moradores = moradores;
+    }
+
     public List<Morador> getMoradores() {
         return moradores;
     }
@@ -53,7 +71,7 @@ public class Imovel {
                 "endereco='" + endereco + '\'' +
                 ", valorDoAluguel=" + valorDoAluguel +
                 ", funcionarioResponsavel='" + funcionarioResponsavel + '\'' +
-                ", Quantidade Moradores: " + moradores.size() + "Nomes: " + moradores +
+                ", Quantidade Moradores: " + morador +
                 '}';
     }
 }
