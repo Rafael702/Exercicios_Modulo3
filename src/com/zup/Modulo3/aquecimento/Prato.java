@@ -1,21 +1,22 @@
 package com.zup.Modulo3.aquecimento;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Prato {
-    private Ingredientes ingrediente;
+    private Ingrediente ingrediente;
     private String nome;
     private double valorDoPrato;
 
-    List<Ingredientes> listaDeIngredientes = new ArrayList<>();
+    List<Ingrediente> listaDeIngredientes = new ArrayList<>();
 
     public Prato(String nome, double valorDoPrato) {
         this.nome = nome;
         this.valorDoPrato = valorDoPrato;
     }
 
-    public Prato(Ingredientes ingrediente, String nome, double valorDoPrato) {
+    public Prato(Ingrediente ingrediente, String nome, double valorDoPrato) {
         this.ingrediente = ingrediente;
         this.nome = nome;
         this.valorDoPrato = valorDoPrato;
@@ -37,20 +38,21 @@ public class Prato {
         this.valorDoPrato = valorDoPrato;
     }
 
-    public Ingredientes getIngrediente() {
+    public Ingrediente getIngrediente() {
         return ingrediente;
     }
 
-    public void setIngrediente(Ingredientes ingrediente) {
+    public void setIngrediente(Ingrediente ingrediente) {
         this.ingrediente = ingrediente;
     }
 
-    public List<Ingredientes> getListaDeIngredientes() {
+    public List<Ingrediente> getListaDeIngredientes() {
         return listaDeIngredientes;
     }
 
-    public void adicionarIngredientes(Ingredientes ingredientes){
-        listaDeIngredientes.add(ingredientes);
+    public void adicionarIngredientes(Ingrediente ingredientes){
+        Ingrediente[] vetorIngredientes1 = new Ingrediente[5];
+        listaDeIngredientes.add(vetorIngredientes1[5]);
     }
 
     @Override

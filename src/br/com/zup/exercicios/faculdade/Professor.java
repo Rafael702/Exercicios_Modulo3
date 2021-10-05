@@ -73,4 +73,8 @@ public class Professor extends Funcionarios {
         }
     }
 
+    @Override
+    public String toString(){
+        return "Nome: " + this.getNome() + " Senioridade: " + this.getNivelDeGraduacao() + " Disciplina: " + this.getDisciplinaMinistrada();
+    }
 }

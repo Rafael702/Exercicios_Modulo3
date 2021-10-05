@@ -1,8 +1,13 @@
 package br.com.zup.exercicios.exerciciolevelup;
 
 public class Morador {
-        private String nome;
-        private String cpf;
+    private String nome;
+    private String cpf;
+
+
+    public Morador() {
+
+    }
 
     public Morador(String nome, String cpf) {
         this.nome = nome;
@@ -23,5 +28,12 @@ public class Morador {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String toString() {
+        StringBuilder retornor = new StringBuilder();
+        retornor.append(": " + nome);
+        retornor.append(" | CPF: " + cpf);
+        return retornor.toString();
     }
 }

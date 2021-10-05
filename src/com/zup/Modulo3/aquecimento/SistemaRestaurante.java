@@ -26,10 +26,10 @@ public class SistemaRestaurante {
         return prato;
     }
 
-    public static Ingredientes cadastrarIngredientes() {
+    public static Ingrediente cadastrarIngredientes() {
         String nome = capturarDados("Nome do Ingrediente:").nextLine();
 
-        Ingredientes ingredientes = new Ingredientes(nome);
+        Ingrediente ingredientes = new Ingrediente(nome);
 
         return ingredientes;
 
@@ -52,7 +52,7 @@ public class SistemaRestaurante {
             if (option == OPCAO_UM) {
 
                 Prato prato = cadastrarPratos();
-                Ingredientes ingredientes = cadastrarIngredientes();
+                Ingrediente ingredientes = cadastrarIngredientes();
 
                 prato.adicionarIngredientes(ingredientes);
                 cardapio.adicionarPrato(prato);

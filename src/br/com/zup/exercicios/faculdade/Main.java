@@ -12,6 +12,7 @@ public class Main {
         coordenador.adicionarProfessores(prof);
 
         prof.adicionarTurma(turminha);
+        System.out.println(prof);
 
     }
 }

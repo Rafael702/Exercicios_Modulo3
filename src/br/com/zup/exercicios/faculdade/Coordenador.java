@@ -16,19 +16,22 @@ public class Coordenador extends Funcionarios {
 
     public void adicionarProfessores(Professor prof) {
         professoresSupervisionados.add(prof);
-        if(professoresSupervisionados.size() <= 5) {
-            for (Professor lista : professoresSupervisionados) {
-                System.out.println("-----------------------------------------");
-                System.out.println("Nome do Professor: " + lista.getNome());
-                System.out.println("Matéria: " + lista.getDisciplinaMinistrada());
 
-                if (professoresSupervisionados.size() > 5){
-                    System.out.println("Apenas estes 5 professores estão sendo supervisionados pelo" + getNome());
+        }
+
+        public void exibirLista(){
+            if(professoresSupervisionados.size() <= 5) {
+                for (Professor lista : professoresSupervisionados) {
+                    System.out.println("-----------------------------------------");
+                    System.out.println("Nome do Professor: " + lista.getNome());
+                    System.out.println("Matéria: " + lista.getDisciplinaMinistrada());
+
+                    if (professoresSupervisionados.size() >= 5){
+                        System.out.println("Apenas estes 5 professores estão sendo supervisionados pelo" + getNome());
+                    }
                 }
             }
         }
-        }
-
 
 
     @Override

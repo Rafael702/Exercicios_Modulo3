@@ -55,14 +55,19 @@ public class Funcionario {
         this.salario = salario;
     }
 
+    public double aumentarSalario() {
+        double novoSalario = (0.1 * salario) + salario;
+        return novoSalario;
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder retorno = new StringBuilder();
         retorno.append("Nome: " + nome);
         retorno.append(" CPF: " + cpf);
         retorno.append(" Número do registro: " + numeroDeRegistro);
         retorno.append(" Orgão de Lotação: " + orgaoDeLotacao);
         retorno.append(" Salário: " + salario);
-        return toString();
+        return retorno.toString();
     }
 }

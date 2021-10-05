@@ -11,16 +11,24 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Menu menu = new Menu();
         Morador morador = new Morador();
-        Imovel imovel = new Imovel(morador);
-        Funcionario funcionario = new Funcionario("Ferdinando", imovel);
+        Imovel imovel = new Imovel();
+        Funcionario funcionario = new Funcionario("Ferdinando");
         CatalogoImoveis catalogoImoveis = new CatalogoImoveis(imovel);
 
-        System.out.println("Cadastrando Imóveis.");
-        imovel = new Imovel("Rua Leopoldo", 150, morador);
+        System.out.println("----------------------------------------------------");
+        System.out.println("Cadastrando Moradores:");
         morador = new Morador("Johny", "4567809-05");
         imovel.cadastrarMoradores(morador);
+        imovel.exibirListaMoradores();
+
+        System.out.println("----------------------------------------------------");
+        System.out.println("Cadastrando Imóveis:");
+        imovel = new Imovel("Rua Leopoldo", 150, morador, funcionario);
+        catalogoImoveis.cadastrarImoveis(imovel);
+
+        catalogoImoveis.exibirImoveis();
+
 
 
     }

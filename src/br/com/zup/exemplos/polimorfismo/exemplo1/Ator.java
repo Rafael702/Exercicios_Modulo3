@@ -61,5 +61,4 @@ public class Ator {
         double salarioLiquido = salario - imposto;
         return salarioLiquido;
     }
-
 }
