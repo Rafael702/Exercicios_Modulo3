@@ -1,4 +1,4 @@
-package br.com.zup.exemplos.exemplo10.carro;
+package br.com.zup.exemplos.exemplo10.carro.carro;
 
 public abstract class Veiculo {
     private String placa;

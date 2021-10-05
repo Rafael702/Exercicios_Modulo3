@@ -1,8 +1,10 @@
-package br.com.zup.exemplos.exemplo10.carro;
+package br.com.zup.exemplos.exemplo10.carro.carro;
 
 //Faça um sistema que gerencie um estacionamento
 //O sistema deve permitir adicionar, remover ou consultar se um carro já está cadastrado
 //O sistema deve exibir os carros do estacionamento.
+
+import br.com.zup.exemplos.exemplo10.carro.carro.Carro;
 
 public interface ModeloEstacionamento {
     //implementar adiciona carro

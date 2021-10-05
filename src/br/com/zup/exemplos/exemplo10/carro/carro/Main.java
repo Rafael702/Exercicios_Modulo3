@@ -1,4 +1,6 @@
-package br.com.zup.exemplos.exemplo10.carro;
+package br.com.zup.exemplos.exemplo10.carro.carro;
+
+import br.com.zup.exemplos.exemplo10.carro.carro.Carro;
 
 public class Main {
     public static void main(String[] args) {
