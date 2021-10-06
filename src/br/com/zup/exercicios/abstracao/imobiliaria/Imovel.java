@@ -14,6 +14,12 @@ public class Imovel {
 
     }
 
+    public Imovel(String endereco, String funcionarioResponsavel, double valorDoAluguel) {
+        this.endereco = endereco;
+        this.funcionarioResponsavel = funcionarioResponsavel;
+        this.valorDoAluguel = valorDoAluguel;
+    }
+
     public Imovel(String endereco, String funcionarioResponsavel, double valorDoAluguel, Morador morador) {
         this.endereco = endereco;
         this.funcionarioResponsavel = funcionarioResponsavel;
@@ -61,8 +67,26 @@ public class Imovel {
         return moradores;
     }
 
-    public void adicionarMoradores(Morador novoMorador){
+    public void adicionarMoradores(Morador novoMorador) {
         moradores.add(novoMorador);
+    }
+
+    public void removerMoradores(String cpf) {
+        Morador moradorASerDeletado = null;
+
+        for (Morador referencia : moradores) {
+            if (referencia.getCpf().equals(cpf)) {
+                System.out.println("CPF Encontrado");
+                for (int i = 1; i <= 100 ; i++) {
+                    System.out.print("-");
+                }
+                moradorASerDeletado = referencia;
+                System.out.println("CPF REMOVIDO COM SUCESSO.");
+            }else{
+                System.out.println("CPF DO MORADOR NÃO ENCONTRADO.");
+            }
+        }
+        moradores.remove(moradorASerDeletado);
     }
 
     @Override
@@ -71,7 +95,7 @@ public class Imovel {
                 "endereco='" + endereco + '\'' +
                 ", valorDoAluguel=" + valorDoAluguel +
                 ", funcionarioResponsavel='" + funcionarioResponsavel + '\'' +
-                ", Quantidade Moradores: " + morador +
+                ", Quantidade Moradores: " + moradores +
                 '}';
     }
 }
