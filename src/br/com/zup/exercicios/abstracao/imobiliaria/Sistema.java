@@ -23,19 +23,38 @@ public class Sistema {
         System.out.println("Digite 4: Para Sair do Programa.");
     }
 
-    private static Morador criarMorador(CatalogoImobiliaria catalogo, Imovel imovel) {
+    private static Morador receberDadosDoMorador() {
         String nome = capturarDados("Informe o nome do Morador: ").nextLine();
         String cpf = capturarDados("Informe o CPF do " + nome + ":").nextLine();
+        String email = capturarDados("Informe o seu email: ").nextLine();
 
-        Morador morador = new Morador(nome, cpf);
-
-        if (verificarCpf(catalogo, morador)) {
-            System.out.println("ESTE CPF JÁ ESTÁ CADASTRADO");
-        } else {
-            imovel.adicionarMoradores(morador);
-        }
+        Morador morador = new Morador(nome, cpf, email);
 
         return morador;
+
+    }
+
+    public static void cadastrarMorador(CatalogoImobiliaria catalogo, Imovel imovel) {
+        int qtdDeMoradores = capturarDados("Informe a quantidade de moradores deste imóvel:").nextInt();
+
+        int contador = 0;
+        while (contador < qtdDeMoradores) {
+            Morador morador = receberDadosDoMorador();
+
+            if (verificarCpf(catalogo, morador)) {
+                System.out.println("ESTE CPF JÁ ESTÁ CADASTRADO");
+            } else {
+                if (!morador.getEmail().contains("@")) {
+                    System.out.println("EMAIL INVÁLIDO!!!");
+                } else {
+                    System.out.println("Cadastrado com sucesso!!!");
+                    imovel.adicionarMoradores(morador);
+                    contador++;
+                }
+
+            }
+        }
+
     }
 
 
@@ -87,10 +106,9 @@ public class Sistema {
 
             if (opcao == OPCAO_UM) {
                 Imovel imovel = criarImovel();
-                Morador morador = criarMorador(catalogo, imovel);
 
                 catalogo.cadastrarImovel(imovel);
-
+                cadastrarMorador(catalogo, imovel);
                 System.out.println("Imovel Cadastrado com sucesso!!!");
             } else if (opcao == OPCAO_DOIS) {
                 catalogo.exibirLista();
