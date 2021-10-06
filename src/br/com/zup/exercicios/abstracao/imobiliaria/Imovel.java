@@ -71,22 +71,10 @@ public class Imovel {
         moradores.add(novoMorador);
     }
 
-    public void removerMoradores(String cpf) {
-        Morador moradorASerDeletado = null;
+    public void VerificaCpf(){
+        for (Morador referencia : moradores){
 
-        for (Morador referencia : moradores) {
-            if (referencia.getCpf().equals(cpf)) {
-                System.out.println("CPF Encontrado");
-                for (int i = 1; i <= 100 ; i++) {
-                    System.out.print("-");
-                }
-                moradorASerDeletado = referencia;
-                System.out.println("CPF REMOVIDO COM SUCESSO.");
-            }else{
-                System.out.println("CPF DO MORADOR NÃO ENCONTRADO.");
-            }
         }
-        moradores.remove(moradorASerDeletado);
     }
 
     @Override
