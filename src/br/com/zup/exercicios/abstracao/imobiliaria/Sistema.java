@@ -41,8 +41,8 @@ public class Sistema {
         while (contador < qtdDeMoradores) {
             Morador morador = receberDadosDoMorador();
 
-            if (verificarCpf(catalogo, morador)) {
-                System.out.println("ESTE CPF JÁ ESTÁ CADASTRADO");
+            if (verificarDuplicacao(catalogo, morador)) {
+                System.out.println("DUPLICAÇÃO IDENTIFICADA.");
             } else {
                 if (!morador.getEmail().contains("@")) {
                     System.out.println("EMAIL INVÁLIDO!!!");
@@ -57,7 +57,6 @@ public class Sistema {
 
     }
 
-
     public static Imovel criarImovel() {
         String rua = capturarDados("Informe o nome da Rua em que está localizado o imóvel:").nextLine();
         String funcionario = capturarDados("Informe o nome do Funcionário:").nextLine();
@@ -68,12 +67,13 @@ public class Sistema {
         return imovel;
     }
 
-    public static boolean verificarCpf(CatalogoImobiliaria catalogoImobiliaria, Morador morador) {
+    public static boolean verificarDuplicacao(CatalogoImobiliaria catalogoImobiliaria, Morador morador) {
         String cpfDuplicado = morador.getCpf();
+        String emailDuplicado = morador.getEmail();
 
         for (Imovel refencia : catalogoImobiliaria.imovels) {
             for (Morador listaMorador : refencia.getMoradores()) {
-                if (listaMorador.getCpf().equals(cpfDuplicado)) {
+                if (listaMorador.getCpf().equals(cpfDuplicado) & listaMorador.getEmail().equals(emailDuplicado)) {
                     return true;
                 }
             }
