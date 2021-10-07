@@ -6,6 +6,8 @@ public class Main {
         try {
             Sistema.cadastrarConsumidor();
             Sistema.cadastrarFatura();
+            Sistema.cadastrarFatura();
+            System.out.println( Sistema.pesquisarFatura());
         } catch (Exception erro){
             System.out.println(erro.getMessage());
         }
