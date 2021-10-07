@@ -10,6 +10,13 @@ public class Aluno {
 
     }
 
+    public Aluno(String nome, String cpf, Turno turno) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.turno = turno;
+    }
+
+
     public Aluno(String nome, String cpf, Turno turno, Nivel nivel) {
         this.nome = nome;
         this.cpf = cpf;
