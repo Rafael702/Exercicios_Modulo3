@@ -19,15 +19,13 @@ public class ServicoConsumidor {
         return tiposDeConsumidor;
     }
 
-    public static TipoConsumidor validarTipoDeConsumidor(String novoTipoConsumidor) throws Exception {
-        for (TipoConsumidor tipoConsumidorReferencia : TipoConsumidor.values()) {
-            String tirandoEspaco = novoTipoConsumidor.replaceAll("\\s+", "");
-            if (tirandoEspaco.equalsIgnoreCase(String.valueOf(tipoConsumidorReferencia))) {
-                return tipoConsumidorReferencia;
-            }
+    public static TipoConsumidor validarTipoDeConsumidor(String consumidorStr) throws Exception {
+        try {
+            String consumidorStrFormatado = consumidorStr.replaceAll("\\s+", "").toUpperCase();
+            return TipoConsumidor.valueOf(consumidorStrFormatado);
+        } catch (IllegalArgumentException iae) {
+            throw new Exception("Tipo de Consumidor não encontrado!");
         }
-        throw new Exception("Tipo de Consumidor não encontrado");
-
     }
 
     public static void verificarSeEmailTemArroba(String email) throws Exception {
