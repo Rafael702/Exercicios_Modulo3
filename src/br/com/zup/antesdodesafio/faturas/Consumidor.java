@@ -30,9 +30,9 @@ public class Consumidor {
 
     @Override
     public String toString() {
-        return "Consumidor{" +
-                "nome='" + nome + '\'' +
-                ", tipoConsumidor=" + tipoConsumidor +
-                '}';
+    StringBuilder retorno  = new StringBuilder();
+    retorno.append(" Nome do Consumidor: " + nome);
+    retorno.append("\n" + "|   Tipo Consumidor: " + tipoConsumidor);
+    return  retorno.toString();
     }
 }

@@ -40,10 +40,10 @@ public class Fatura {
 
     @Override
     public String toString() {
-        return "Fatura{" +
-                "consumidor=" + consumidor +
-                ", valorPagamento=" + valorPagamento +
-                ", dataDeVencimento='" + dataDeVencimento + '\'' +
-                '}';
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("|  " + consumidor);
+        retorno.append("\n" + "|   Valor da Fatura: R$" + valorPagamento);
+        retorno.append("\n" + "|   Data De Vencimento: " + dataDeVencimento);
+        return retorno.toString();
     }
 }
