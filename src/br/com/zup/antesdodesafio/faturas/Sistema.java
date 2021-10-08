@@ -69,9 +69,9 @@ public class Sistema {
 
     public static boolean executar() throws Exception {
 
-        boolean continuar = true;
+        boolean continuarMenu = true;
         System.out.println("---BEM-VINDO-AO-FACILITADOR-DE-EMISSÃO-DE-FATURAS---");
-        while (continuar) {
+        while (continuarMenu) {
             menuPrincipal();
             int opcao = capturarDados("Digite a sua opção:").nextInt();
             if (opcao == OPCAO_UM) {
@@ -82,12 +82,12 @@ public class Sistema {
                 pesquisarFaturas();
             } else if (opcao == OPCAO_QUATRO) {
                 saindoDoPrograma();
-                return false;
+                continuarMenu = false;
             } else {
                 System.out.println("Digite uma opção válida, de acordo com o MENU.");
             }
         }
-        return continuar;
+        return continuarMenu;
     }
 
 }

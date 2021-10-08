@@ -10,29 +10,46 @@ public class ServicoConsumidor {
         return consumidores;
     }
 
-    public static List<TipoConsumidor> mostrarTiposDeConsumidor(){
-       List<TipoConsumidor> tiposDeConsumidor = new ArrayList<>();
+    public static List<TipoConsumidor> mostrarTiposDeConsumidor() {
+        List<TipoConsumidor> tiposDeConsumidor = new ArrayList<>();
 
-       for(TipoConsumidor tipoConsumidor: TipoConsumidor.values()){
-              tiposDeConsumidor.add(tipoConsumidor);
-       }
+        for (TipoConsumidor tipoConsumidor : TipoConsumidor.values()) {
+            tiposDeConsumidor.add(tipoConsumidor);
+        }
         return tiposDeConsumidor;
-   }
-
-    public static TipoConsumidor validarTipoDeConsumidor(String novoTipoConsumidor) throws Exception {
-       for (TipoConsumidor tipoConsumidorReferencia : TipoConsumidor.values()) {
-           String tirandoEspaco = novoTipoConsumidor.replaceAll("\\s+", "");
-               if (tirandoEspaco.equalsIgnoreCase(String.valueOf(tipoConsumidorReferencia))) {
-                   return tipoConsumidorReferencia;
-               }
-           }
-        throw new Exception("Tipo de Consumidor não encontrado");
-           
     }
 
-    public static Consumidor cadastrarConsumidor(String nome, String email,String tipoConsumidor) throws Exception {
+    public static TipoConsumidor validarTipoDeConsumidor(String novoTipoConsumidor) throws Exception {
+        for (TipoConsumidor tipoConsumidorReferencia : TipoConsumidor.values()) {
+            String tirandoEspaco = novoTipoConsumidor.replaceAll("\\s+", "");
+            if (tirandoEspaco.equalsIgnoreCase(String.valueOf(tipoConsumidorReferencia))) {
+                return tipoConsumidorReferencia;
+            }
+        }
+        throw new Exception("Tipo de Consumidor não encontrado");
+
+    }
+
+    public static void verificarSeEmailTemArroba(String email) throws Exception {
+        if (!email.contains("@")) {
+            throw new Exception("Este E-mail não contêm @. Ex: ciclan@ciclan");
+        }
+    }
+
+    public static void verificarEmail(String novoEmail) throws Exception {
+        for (Consumidor consumidorReferencia : consumidores) {
+            if (consumidorReferencia.getEmail().equals(novoEmail)) {
+                throw new Exception("Este E-mail não pode ser cadastrado, pois está duplicado.");
+            }
+        }
+    }
+
+    public static Consumidor cadastrarConsumidor(String nome, String email, String tipoConsumidor) throws Exception {
+        verificarSeEmailTemArroba(email);
+        verificarEmail(email);
         TipoConsumidor tipo = validarTipoDeConsumidor(tipoConsumidor);
-        Consumidor consumidor = new Consumidor(nome, email ,tipo);
+
+        Consumidor consumidor = new Consumidor(nome, email, tipo);
 
         consumidores.add(consumidor);
         return consumidor;
