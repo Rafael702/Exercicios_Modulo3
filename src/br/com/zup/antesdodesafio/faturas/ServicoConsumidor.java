@@ -6,7 +6,11 @@ import java.util.List;
 public class ServicoConsumidor {
     private static List<Consumidor> consumidores = new ArrayList<>();
 
-   public static List<TipoConsumidor> mostrarTiposDeConsumidor(){
+    public static List<Consumidor> getConsumidores() {
+        return consumidores;
+    }
+
+    public static List<TipoConsumidor> mostrarTiposDeConsumidor(){
        List<TipoConsumidor> tiposDeConsumidor = new ArrayList<>();
 
        for(TipoConsumidor tipoConsumidor: TipoConsumidor.values()){
@@ -26,9 +30,9 @@ public class ServicoConsumidor {
            
     }
 
-    public static Consumidor cadastrarConsumidor(String nome, String tipoConsumidor) throws Exception {
+    public static Consumidor cadastrarConsumidor(String nome, String email,String tipoConsumidor) throws Exception {
         TipoConsumidor tipo = validarTipoDeConsumidor(tipoConsumidor);
-        Consumidor consumidor = new Consumidor(nome, tipo);
+        Consumidor consumidor = new Consumidor(nome, email ,tipo);
 
         consumidores.add(consumidor);
         return consumidor;

@@ -7,6 +7,7 @@ public class Sistema {
     private final static int OPCAO_UM = 1;
     private final static int OPCAO_DOIS = 2;
     private final static int OPCAO_TRES = 3;
+    private final static int OPCAO_QUATRO = 4;
 
 
     private static Scanner capturarDados(String mensagem) {
@@ -17,7 +18,8 @@ public class Sistema {
     private static void menuPrincipal() {
         System.out.println("Digite 1: Para Adicionar uma Fatura");
         System.out.println("Digite 2: Para Mostrar A Fatura");
-        System.out.println("Digite 3: Para Sair do Programa");
+        System.out.println("Digite 3: Para Pesquisar Uma Fatura");
+        System.out.println("Digite 4: Para Sair do Programa");
 
     }
 
@@ -31,20 +33,28 @@ public class Sistema {
 
     private static Consumidor cadastrarConsumidor() throws Exception {
         String nome = capturarDados("Informe o nome do Colaborador:").nextLine();
+        String email = capturarDados("Informe o email do Colaborador:").nextLine();
         menuTipoConsumidor();
         String tipoDeConsumidor = capturarDados("Informe o tipo de consumidor:").nextLine();
 
-        return ServicoConsumidor.cadastrarConsumidor(nome, tipoDeConsumidor);
+        return ServicoConsumidor.cadastrarConsumidor(nome, email,tipoDeConsumidor);
     }
 
     public static Fatura cadastrarFaturas() throws Exception {
         double valorPagamento = capturarDados("Informe o valor de pagamento da Fatura:").nextDouble();
-        String dataDeVecimento = capturarDados("Informe a data de vencimento da Fatura: Ex: 00/00/0000").nextLine();
+        String dataDeVecimento = capturarDados("Informe a data de vencimento da Fatura: Ex: dd/mm/AAAA").nextLine();
         Consumidor consumidor = cadastrarConsumidor();
         System.out.println("Fatura Cadastrada Com SUCESSO!!!");
 
         return ServicoFatura.cadastrarFatura(consumidor, valorPagamento, dataDeVecimento);
     }
+
+    public static List<Fatura> pesquisarFaturas() throws Exception{
+        String emailParaPesquisa = capturarDados("Informe o e-mail que você deseja fazer a pesquisa:").nextLine();
+
+        return ServicoFatura.pesquisarFaturas(emailParaPesquisa);
+    }
+
 
     public static void saindoDoPrograma() throws Exception {
         System.out.println("Saindo do Programa");
@@ -52,7 +62,7 @@ public class Sistema {
             System.out.print("-");
             Thread.sleep(500);
             if(i == 10){
-                System.out.print("--COME-IN-BACK--");
+                System.out.print("---COME-IN-BACK---");
             }
         }
     }
@@ -69,6 +79,8 @@ public class Sistema {
             } else if (opcao == OPCAO_DOIS) {
                 ServicoFatura.exibirLista();
             } else if (opcao == OPCAO_TRES) {
+                pesquisarFaturas();
+            } else if (opcao == OPCAO_QUATRO) {
                 saindoDoPrograma();
                 return false;
             } else {

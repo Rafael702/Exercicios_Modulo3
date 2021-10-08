@@ -13,6 +13,22 @@ public class ServicoFatura {
         return fatura;
     }
 
+    public static List<Fatura> pesquisarFaturas(String emailParaPesquisa) throws Exception{
+       List<Fatura> faturasRelacionada = new ArrayList<>();
+        for(Consumidor consumidorReferencia: ServicoConsumidor.getConsumidores()){
+            if(emailParaPesquisa.equals(consumidorReferencia.getEmail())){
+                for(Fatura faturasReferencia : faturas){
+                    if(faturasReferencia.getConsumidor().getEmail().equals(emailParaPesquisa)){
+                        faturasRelacionada.add(faturasReferencia);
+                    }
+                }
+            }
+            System.out.println("\n" + faturasRelacionada + "\n");
+            return faturasRelacionada;
+        }
+        throw new Exception("Este e-mail não foi cadastrado.");
+    }
+
     public static void exibirLista(){
         System.out.println("---------FATURAS-CADASTRADAS-------");
         System.out.println("-----------------------------------");
